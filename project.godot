@@ -20,7 +20,3 @@ config/icon="res://icon.svg"
 window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
-
-[rendering]
-
-2d/snap/snap_2d_transforms_to_pixel=true

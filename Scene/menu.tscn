@@ -1,8 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://d5nl31671aou"]
+[gd_scene load_steps=4 format=3 uid="uid://d5nl31671aou"]
 
 [ext_resource type="PackedScene" uid="uid://bosufi7vmcl84" path="res://Scene/background.tscn" id="1_hetut"]
+[ext_resource type="Script" path="res://Scene/play.gd" id="2_ns585"]
+[ext_resource type="Script" path="res://Scene/quit.gd" id="3_7bids"]
 
 [node name="menu" type="Node2D"]
 
 [node name="background" parent="." instance=ExtResource("1_hetut")]
 position = Vector2(9, -3)
+
+[node name="play" type="Button" parent="."]
+offset_left = 336.0
+offset_top = 277.0
+offset_right = 768.0
+offset_bottom = 369.0
+text = "PLAY"
+script = ExtResource("2_ns585")
+
+[node name="quit" type="Button" parent="."]
+offset_left = 336.0
+offset_top = 422.0
+offset_right = 768.0
+offset_bottom = 514.0
+script = ExtResource("3_7bids")
+
+[connection signal="pressed" from="play" to="play" method="_on_pressed"]
+[connection signal="pressed" from="quit" to="quit" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bct61owb4td4x"]
+[gd_scene load_steps=32 format=3 uid="uid://bct61owb4td4x"]
 
 [ext_resource type="Script" path="res://Scene/slime.gd" id="1_3dw25"]
 [ext_resource type="Texture2D" uid="uid://ddmkun5e6j4x1" path="res://Assets/Spiked Slime/Slime_Spiked_Ability.png" id="1_63sok"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dvh17823lax7l" path="res://Assets/Spiked Slime/Slime_Spiked_Run.png" id="5_r71bn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_idpb0"]
-height = 34.0
+radius = 9.0
+height = 26.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7eil"]
 atlas = ExtResource("1_63sok")
@@ -192,6 +193,9 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xntk2"]
+radius = 51.0392
+
 [node name="slime" type="CharacterBody2D"]
 script = ExtResource("1_3dw25")
 
@@ -202,4 +206,12 @@ shape = SubResource("CapsuleShape2D_idpb0")
 scale = Vector2(0.757813, 0.757813)
 sprite_frames = SubResource("SpriteFrames_x40bc")
 animation = &"walk"
-frame_progress = 0.171635
+autoplay = "idle"
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource("CircleShape2D_xntk2")
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]

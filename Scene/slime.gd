@@ -5,6 +5,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
 var speed = 100
 @onready var anim = $AnimatedSprite2D
+var alive = true
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -32,3 +33,9 @@ func _on_detector_body_entered(body: Node2D) -> void:
 func _on_detector_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		chase = false
+		
+func death ():
+	alive = false
+	anim.play("death")
+	await anim.animation_finished
+	queue_free()

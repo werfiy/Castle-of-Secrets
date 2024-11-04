@@ -194,9 +194,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xntk2"]
-radius = 51.0392
+radius = 105.019
 
 [node name="slime" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_3dw25")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -205,7 +206,7 @@ shape = SubResource("CapsuleShape2D_idpb0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.757813, 0.757813)
 sprite_frames = SubResource("SpriteFrames_x40bc")
-animation = &"walk"
+animation = &"abil"
 autoplay = "idle"
 
 [node name="Detector" type="Area2D" parent="."]

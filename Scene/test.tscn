@@ -215,6 +215,7 @@ sources/0 = SubResource("TileSetAtlasSource_bi5um")
 position = Vector2(176, 521)
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_j1plg")
 format = 2
 layer_0/name = "zemla"

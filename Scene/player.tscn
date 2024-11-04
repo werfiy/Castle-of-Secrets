@@ -373,6 +373,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_7m6s8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

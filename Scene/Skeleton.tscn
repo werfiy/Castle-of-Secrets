@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://d220i3c8uofq"]
+[gd_scene load_steps=31 format=3 uid="uid://d220i3c8uofq"]
 
+[ext_resource type="Script" path="res://Scene/skeleton.gd" id="1_b60jd"]
 [ext_resource type="Texture2D" uid="uid://dm5mii68mk6v3" path="res://Assets/Skull/Bones_SingleSkull_Death.png" id="1_gppjj"]
 [ext_resource type="Texture2D" uid="uid://cnp3urrgvplbb" path="res://Assets/Skull/Bones_SingleSkull_Hit.png" id="2_spsdx"]
 [ext_resource type="Texture2D" uid="uid://bmljt5l8xbwpl" path="res://Assets/Skull/Bones_SingleSkull_Idle.png" id="3_rdt6m"]
@@ -189,8 +190,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lf6i7"]
+radius = 70.0071
+
 [node name="Skeleton" type="CharacterBody2D"]
 texture_filter = 1
+script = ExtResource("1_b60jd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_idpb0")
@@ -199,3 +204,8 @@ shape = SubResource("CapsuleShape2D_idpb0")
 sprite_frames = SubResource("SpriteFrames_x40bc")
 animation = &"abil"
 frame_progress = 0.196428
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource("CircleShape2D_lf6i7")

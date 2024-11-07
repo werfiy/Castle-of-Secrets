@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnm502hsa8j08"]
+[gd_scene load_steps=7 format=3 uid="uid://cnm502hsa8j08"]
 
 [ext_resource type="Texture2D" uid="uid://yh6o2sfmwvyw" path="res://Assets/zamok/Assets.png" id="1_ajqs7"]
 [ext_resource type="PackedScene" uid="uid://c3c4o2vi76yss" path="res://Scene/player.tscn" id="2_hnmlv"]
 [ext_resource type="PackedScene" uid="uid://bct61owb4td4x" path="res://Scene/Slime.tscn" id="3_y43fc"]
+[ext_resource type="PackedScene" uid="uid://d220i3c8uofq" path="res://Scene/Skeleton.tscn" id="4_2vu5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bi5um"]
 texture = ExtResource("1_ajqs7")
@@ -223,3 +224,6 @@ layer_0/tile_data = PackedInt32Array(2359299, 589824, 3, 2359300, 589824, 3, 235
 
 [node name="slime" parent="." instance=ExtResource("3_y43fc")]
 position = Vector2(403, 560)
+
+[node name="Skeleton" parent="." instance=ExtResource("4_2vu5j")]
+position = Vector2(229, 519)
